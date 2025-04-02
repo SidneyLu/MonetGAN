@@ -1,0 +1,53 @@
+# MonetGAN
+A lightweight app transferring your photos to Monet-styled images
+
+Based on CycleGAN 
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+
+Constructed in Pytorch (as the AI backend) and C++-Qt (as the UI frontend)
+
+Deployed using LibTorch as AI frontend for inference
+
+Hi, I'm Sidney Lu, now a freshman of Nankai University (NKU), China. This is my final project for the course "Advanced Programming in C++" (COSC0039).
+
+If you like it, please give me your precious star, or you just thought it could be better, please share your feedback with me. 
+
+As a complete green-hand in programming, I believe any of your comments can engrace my learning.
+
+Feel free to email me at 3151599052@qq.com or sidneylu0822@mail.nankai.edu.cn !
+
+## Environment and Dependencies
+* Windows 11
+* Python 3.13.2
+* CUDA 12.6 with CuDNN
+* PyTorch 2.6.0
+* MSVC Compiler (Visual Studio 2022)
+* CMake 4.0.0
+* Qt 6.8.2
+* OpenCV 4.11.0
+* LibTorch 2.6.0
+
+## Logs
+
+### Log ver 0.0.1
+Hello World!
+
+### Log ver 0.1.0
+Initiated Generator model and converted to TorchScript
+My model is trained on _monet2photo_ dataset, which is created by contributors from UC Berkeley
+^[http://efrosgans.eecs.berkeley.edu/cyclegan/datasets/monet2photo.zip]. 
+The art images were downloaded from Wikiart.
+I have done some modifications to the model, such as only reserving GeneratorBtoA (from photos to Monet images) in the release version.
+My next step is to load it via LibTorch.
+
+## Citations
+```
+@inproceedings{CycleGAN2017,
+  title={Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks},
+  author={Zhu, Jun-Yan and Park, Taesung and Isola, Phillip and Efros, Alexei A},
+  booktitle={Computer Vision (ICCV), 2017 IEEE International Conference on},
+  year={2017}
+}
+```
+
+## Acknowledgements
