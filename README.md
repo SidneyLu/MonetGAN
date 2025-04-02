@@ -34,11 +34,27 @@ Hello World!
 
 ### Log ver 0.1.0
 Initiated Generator model and converted to TorchScript
-My model is trained on _monet2photo_ dataset, which is created by contributors from UC Berkeley
-^[http://efrosgans.eecs.berkeley.edu/cyclegan/datasets/monet2photo.zip]. 
+My model is trained on _monet2photo_ dataset, which is created by contributors from UC Berkeley.
+http://efrosgans.eecs.berkeley.edu/cyclegan/datasets/monet2photo.zip
+
 The art images were downloaded from Wikiart.
+
 I have done some modifications to the model, such as only reserving GeneratorBtoA (from photos to Monet images) in the release version.
+
 My next step is to load it via LibTorch.
+
+### Log ver 0.2.0
+LibTorch model successfully loaded, ready to be packaged.
+
+You may have to make some changes on CMakeLists.txt so you can run it locally.
+
+Please Change ```CMAKE_PREFIX_PATH``` and ```QT_INSTALL_PATH``` to corresponding directories on your on devices.
+
+For this test version, you need to put your "input.jpg" and the .pt file in the same path of built .exe. 
+
+For your convenience, loading the project and building it using CLion is recommended.
+
+Starting to furnish Qt GUI
 
 ## Citations
 ```
