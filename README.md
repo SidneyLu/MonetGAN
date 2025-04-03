@@ -59,6 +59,11 @@ Starting to furnish Qt GUI
 ### Log ver 0.3.0
 The generator has been encapsulated into a function
 
+### Log ver 0.4.0
+Establishing a simple UI
+Two Buttons interacting with filesystem left to be constructed
+Visualizing original and generated images will be implemented in subsequent versions
+
 ## Citations
 ```
 @inproceedings{CycleGAN2017,
@@ -70,3 +75,5 @@ The generator has been encapsulated into a function
 ```
 
 ## Acknowledgements
+Thanks to Ziheng Ouyang for his technique support (some ingenious debugging ideas on LibTorch model loading).
+https://github.com/ouyangziheng
