@@ -24,6 +24,9 @@ add_executable(MonetGAN generator.cpp
         generator.h
         dataconverter.h
         dataconverter.cpp
+        main.cpp
+        mainwindow.cpp
+        mainwindow.h
 )
 target_link_libraries(MonetGAN
         Qt::Core
