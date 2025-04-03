@@ -56,6 +56,9 @@ For your convenience, loading the project and building it using CLion is recomme
 
 Starting to furnish Qt GUI
 
+### Log ver 0.3.0
+The generator has been encapsulated into a function
+
 ## Citations
 ```
 @inproceedings{CycleGAN2017,
