@@ -20,7 +20,8 @@ find_package(Torch REQUIRED)
 find_package(OpenCV REQUIRED)
 
 
-add_executable(MonetGAN gen.cpp
+add_executable(MonetGAN generator.cpp
+        generator.h
 )
 target_link_libraries(MonetGAN
         Qt::Core
