@@ -1,35 +1,29 @@
-//
-// Created by 31515 on 25-4-3.
-//
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#undef slots
 #include <QMainWindow>
-#include <QString>
-#include <QImage>
+#include <QLabel>
 #include <QPushButton>
-#include "dataconverter.h"
-#include "generator.h"
-#define slots Q_SLOTS
+#include <opencv2/opencv.hpp>
 
 class MainWindow : public QMainWindow {
-Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow() override;
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+    private slots:
+    void onReadAndProcess();
+    void onSaveImage();
 
 private:
-    QString m_filename;
-    QImage m_image;
-
-private slots:
-    void on_Open_triggered();
-    void on_Generate_triggered();
-    void on_Save_triggered();
+    QLabel *imageDisplay1;
+    QLabel *imageDisplay2;
+    QPushButton *processBtn;
+    QPushButton *saveBtn;
+    cv::Mat originalMat;
+    cv::Mat processedMat;
 };
 
-
-#endif //MAINWINDOW_H
+#endif // MAINWINDOW_H

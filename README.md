@@ -64,6 +64,10 @@ Establishing a simple UI
 Two Buttons interacting with filesystem left to be constructed
 Visualizing original and generated images will be implemented in subsequent versions
 
+### Log ver 0.5.0
+UI is ready!
+Try it!
+
 ## Citations
 ```
 @inproceedings{CycleGAN2017,

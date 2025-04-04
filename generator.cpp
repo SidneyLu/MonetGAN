@@ -27,5 +27,4 @@ cv::Mat Generate(const cv::Mat& input_image) {
     // Convert to OpenCV Mat
     static cv::Mat output_image(output_tensor.size(0),output_tensor.size(1),CV_8UC3,output_tensor.data_ptr());
     return output_image;
-
 }
