@@ -67,6 +67,7 @@ Visualizing original and generated images will be implemented in subsequent vers
 ### Log ver 0.5.0
 UI is ready!
 Try it!
+<img src="interface.png">
 
 ## Citations
 ```
