@@ -61,17 +61,22 @@ The generator has been encapsulated into a function
 
 ### Log ver 0.4.0
 Establishing a simple UI
+
 Two Buttons interacting with filesystem left to be constructed
+
 Visualizing original and generated images will be implemented in subsequent versions
 
 ### Log ver 0.5.0
 UI is ready!
+
 Try it!
 <img src="interface.png">
 
 ### Log ver 0.6.0
 Optimizing UI
+
 Adding QSS
+<img src="interface2.png">
 
 ## Citations
 ```
