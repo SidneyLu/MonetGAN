@@ -20,11 +20,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     imageDisplay1->setAlignment(Qt::AlignCenter);
     imageDisplay2->setAlignment(Qt::AlignCenter);
 
-    processBtn = new QPushButton("读取并处理图像");
+    processBtn = new QPushButton("Load and Generate");
     connect(processBtn, &QPushButton::clicked, this, &MainWindow::onReadAndProcess);
     mainLayout->addWidget(processBtn);
 
-    saveBtn = new QPushButton("保存处理后图像");
+    saveBtn = new QPushButton("Save");
     connect(saveBtn, &QPushButton::clicked, this, &MainWindow::onSaveImage);
     mainLayout->addWidget(saveBtn);
 
@@ -34,12 +34,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 MainWindow::~MainWindow() = default;
 
 void MainWindow::onReadAndProcess() {
-    QString filePath = QFileDialog::getOpenFileName(this, "选择图像", "", "Images (*.png *.jpg *.jpeg)");
+    QString filePath = QFileDialog::getOpenFileName(this, "Select", "", "Images (*.png *.jpg *.jpeg)");
     if (filePath.isEmpty()) return;
 
     originalMat = cv::imread(filePath.toStdString());
     if (originalMat.empty()) {
-        QMessageBox::warning(this, "错误", "图像读取失败");
+        QMessageBox::warning(this, "Error", "Failed to load image");
         return;
     }
     cv:cvtColor(originalMat, originalMat, cv::COLOR_BGR2RGB);
@@ -53,15 +53,15 @@ void MainWindow::onReadAndProcess() {
 
 void MainWindow::onSaveImage() {
     if (processedMat.empty()) {
-        QMessageBox::warning(this, "错误", "无处理后图像可保存");
+        QMessageBox::warning(this, "Error", "No processed image to save");
         return;
     }
 
     cv::cvtColor(processedMat, processedMat, cv::COLOR_RGB2BGR);
 
-    QString savePath = QFileDialog::getSaveFileName(this, "保存图像", "", "Images (*.png *.jpg)");
+    QString savePath = QFileDialog::getSaveFileName(this, "Save your image", "", "Images (*.png *.jpg)");
     if (!savePath.isEmpty()) {
         cv::imwrite(savePath.toStdString(), processedMat); // 直接用 OpenCV 保存
-        QMessageBox::information(this, "提示", "图像保存成功");
+        QMessageBox::information(this, "", "Success!");
     }
 }

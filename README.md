@@ -69,6 +69,10 @@ UI is ready!
 Try it!
 <img src="interface.png">
 
+### Log ver 0.6.0
+Optimizing UI
+Adding QSS
+
 ## Citations
 ```
 @inproceedings{CycleGAN2017,
