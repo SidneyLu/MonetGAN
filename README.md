@@ -78,6 +78,9 @@ Optimizing UI
 Adding QSS
 <img src="interface2.png">
 
+### Log ver 0.7.0
+Implemented a better ImageViewer
+
 ## Citations
 ```
 @inproceedings{CycleGAN2017,

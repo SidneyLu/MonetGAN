@@ -8,6 +8,8 @@ set(CMAKE_AUTOUIC ON)
 set(CAFFE2_USE_CUDNN ON)
 
 set(CMAKE_PREFIX_PATH "C:/Qt/6.8.2/msvc2022_64/bin;C:/LibTorch;C:/OpenCV;")
+set(CUDNN_LIBRARY_PATH "C:/Program Files/NVIDIA/CUDNN/v9.6/bin/12.6")
+set(CUDNN_INCLUDE_PATH "C:/Program Files/NVIDIA/CUDNN/v9.6/include/12.6")
 
 set(TORCH)
 
@@ -27,6 +29,8 @@ add_executable(MonetGAN generator.cpp
         main.cpp
         mainwindow.cpp
         mainwindow.h
+        imageviewer.cpp
+        imageviewer.h
 )
 target_link_libraries(MonetGAN
         Qt::Core

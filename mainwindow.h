@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <opencv2/opencv.hpp>
+#include "imageviewer.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -18,8 +19,8 @@ public:
     void onSaveImage();
 
 private:
-    QLabel *imageDisplay1;
-    QLabel *imageDisplay2;
+    ImageViewer *imageDisplay1;
+    ImageViewer *imageDisplay2;
     QPushButton *processBtn;
     QPushButton *saveBtn;
     cv::Mat originalMat;

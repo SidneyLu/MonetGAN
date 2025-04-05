@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "generator.h"
 #include "dataconverter.h"
+#include "imageviewer.h"
 #include <QFileDialog>
 #include <QVBoxLayout>
 #include <QMessageBox>
@@ -13,12 +14,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     QWidget* centralWidget = new QWidget(this);
     QVBoxLayout* mainLayout = new QVBoxLayout(centralWidget);
 
-    imageDisplay1 = new QLabel();
-    imageDisplay2 = new QLabel();
+    imageDisplay1 = new ImageViewer();
+    imageDisplay2 = new ImageViewer();
     mainLayout->addWidget(imageDisplay1);
     mainLayout->addWidget(imageDisplay2);
-    imageDisplay1->setAlignment(Qt::AlignCenter);
-    imageDisplay2->setAlignment(Qt::AlignCenter);
 
     processBtn = new QPushButton("Load and Generate");
     connect(processBtn, &QPushButton::clicked, this, &MainWindow::onReadAndProcess);
@@ -43,6 +42,7 @@ void MainWindow::onReadAndProcess() {
         return;
     }
     cv:cvtColor(originalMat, originalMat, cv::COLOR_BGR2RGB);
+    cv::resize(originalMat, originalMat, cv::Size(256, 256));
     QImage input = MatToQImage(originalMat);
     imageDisplay1->setPixmap(QPixmap::fromImage(input));
 
