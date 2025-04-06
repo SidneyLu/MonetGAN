@@ -42,6 +42,8 @@ void MainWindow::onReadAndProcess() {
         return;
     }
     cv:cvtColor(originalMat, originalMat, cv::COLOR_BGR2RGB);
+    int width = originalMat.cols;
+    int height = originalMat.rows;
     cv::resize(originalMat, originalMat, cv::Size(256, 256));
     QImage input = MatToQImage(originalMat);
     imageDisplay1->setPixmap(QPixmap::fromImage(input));
@@ -61,6 +63,7 @@ void MainWindow::onSaveImage() {
 
     QString savePath = QFileDialog::getSaveFileName(this, "Save your image", "", "Images (*.png *.jpg)");
     if (!savePath.isEmpty()) {
+        cv::resize(processedMat, processedMat, cv::Size(4096, 4096));
         cv::imwrite(savePath.toStdString(), processedMat); // 直接用 OpenCV 保存
         QMessageBox::information(this, "", "Success!");
     }
