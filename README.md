@@ -81,6 +81,9 @@ Adding QSS
 ### Log ver 0.7.0
 Implemented a better ImageViewer
 
+### Log ver 0.8.0
+Higher Resolution Support for saving images
+
 ## Citations
 ```
 @inproceedings{CycleGAN2017,
